@@ -1,30 +1,26 @@
 {
-  "title": "FitBit 19 - The Smartest Watch",
-  "description": "Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.",
+  "title": "Watches shopping page practice",
+  "description": "This is a practice page created to be able to choose a strap colour and display the time or heart rate on the selected procuct.",
   "colorOptions": [
     {
       "id": 1,
       "styleName": "Black Strap",
-      "imageUrl": "https://imgur.com/iOeUBV7.png",
-      "isCurrentlySelected": false
+      "imageUrl": "https://imgur.com/iOeUBV7.png"
     },
     {
       "id": 2,
       "styleName": "Red Strap",
-      "imageUrl": "https://imgur.com/PTgQlim.png",
-      "isCurrentlySelected": false
+      "imageUrl": "https://imgur.com/PTgQlim.png"
     },
     {
       "id": 3,
       "styleName": "Blue Strap",
-      "imageUrl": "https://imgur.com/Mplj1YR.png",
-      "isCurrentlySelected": false
+      "imageUrl": "https://imgur.com/Mplj1YR.png"
     },
     {
       "id": 4,
       "styleName": "Purple Strap",
-      "imageUrl": "https://imgur.com/xSIK4M8.png",
-      "isCurrentlySelected": false
+      "imageUrl": "https://imgur.com/xSIK4M8.png"
     }
   ],
   "featureList": [

@@ -4,11 +4,10 @@ import React, { Component } from 'react';
 import productData from './data/productData.json';
 import ProductCard from './components/ProductCard';
 import PageHeader from './components/PageHeader';
+import ProductHeader from './components/ProductHeader';
+import SelectedProduct from './components/SelectedProduct';
 import isArrayEmpty from './helpers/Utils';
-import classes from './styles/App.module.css';
 
-const pageTitle = productData.title;
-const pageDescription = productData.description;
 const productDataArray = productData.colorOptions;
 // const featuresArray = productData.featureList;
 
@@ -46,10 +45,8 @@ class App extends Component {
     return (
     <div className='App'>
       <div> { PageHeader } </div>
-      <div className={classes.PageTitle}>{ pageTitle }</div>
-      <br></br>
-      <div className={classes.PageDescription}>{ pageDescription }</div>
-      <br></br>
+      <div> { ProductHeader } </div>
+      <div> { SelectedProduct } </div>
       <div> { ProductCards } </div>
       <br></br>
     </div>
