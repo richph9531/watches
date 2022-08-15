@@ -1,17 +1,13 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 
-import productData from './data/productData.json';
-import ProductCard from './components/ProductCard';
-import PageHeader from './components/PageHeader';
-import ProductHeader from './components/ProductHeader';
-import SelectedProduct from './components/SelectedProduct';
-import isArrayEmpty from './helpers/Utils';
+import productData from '../data/productData.json';
+import ProductCard from './ProductCard';
+import isArrayEmpty from '../helpers/Utils';
 
 const productDataArray = productData.colorOptions;
-// const featuresArray = productData.featureList;
 
-class App extends Component {
+class ProductCards extends Component {
   state = {
     productDataArray,
   };
@@ -31,7 +27,7 @@ class App extends Component {
 
   render() {
     // eslint-disable-next-line max-len
-    const ProductCards = isArrayEmpty(this.state.productDataArray) ? [] : this.state.productDataArray.map((item, pos) => (
+    const ProductCardsMap = isArrayEmpty(this.state.productDataArray) ? [] : this.state.productDataArray.map((item, pos) => (
     <ProductCard
       key={item.id}
       title={item.title}
@@ -43,14 +39,12 @@ class App extends Component {
     ));
 
     return (
-    <div className='App'>
-      <div> { PageHeader } </div>
-      <div> { ProductHeader } </div>
-      <div> { SelectedProduct } { ProductCards } </div>
+    <div className='ProductCards'>
+      <div> { ProductCardsMap } </div>
       <br></br>
     </div>
     );
   }
 }
 
-export default App;
+export default ProductCards;
