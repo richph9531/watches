@@ -9,8 +9,6 @@ import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
 import Features from './components/Features';
 
-import isArrayEmpty from './helpers/Utils';
-
 const productDataArray = productData.colorOptions;
 // const featuresArray = productData.featureList;
 
@@ -40,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    const ProductCards = isArrayEmpty(this.state.productDataArray) ? [] : this.state.productDataArray.map((item, pos) => (
+    const ProductCards = this.state.productDataArray.map((item, pos) => (
     <ProductCard
       key={item.id}
       title={item.title}
