@@ -1,33 +1,34 @@
 .ProductCard {
   margin: 16px;
   padding: 16px;
-  border-radius: 30px;
+  border-radius: 20px;
   background: #ececec;
   box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  text-align: right;
+  height: 140px;
+  width: 140px;
   display: inline-block;
 }
 
 .ProductCardSelected {
   margin: 16px;
   padding: 16px;
-  background: #a8a8a8;
+  background: #ececec;
   box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  text-align: right;
+  height: 140px;
+  width: 140px;
   display: inline-block;
   border:3px;
   border-style:solid;
   border-color: #af3f3f;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .WatchImage {
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

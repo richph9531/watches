@@ -1,13 +1,19 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import classes from '../styles/SelectedProduct.module.css';
+import productData from '../data/productData.json';
 
-const SelectedProduct = (
+const productDataArray = productData.colorOptions;
+
+const SelectedProduct = productId => {
+  const filtered = productDataArray.filter(row => row.id === productId);
+  return (
   <img
   className={classes.WatchImage}
-  src="https://imgur.com/iOeUBV7.png"
-  alt="Black strap"
+  src={filtered[0].imageUrl}
+  alt={filtered[0].styleName}
   />
-);
+  );
+};
 
 export default SelectedProduct;

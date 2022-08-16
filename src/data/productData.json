@@ -1,6 +1,6 @@
 {
   "title": "Watches shopping page practice",
-  "description": "This is a practice page created to be able to choose a strap colour and display the time or heart rate on the selected procuct.",
+  "description": "This is a practice page created to be able to choose a strap colour and display the time or heart rate on the selected product.",
   "colorOptions": [
     {
       "id": 1,

@@ -1,11 +1,14 @@
-/* eslint-disable class-methods-use-this */
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 
 import productData from './data/productData.json';
-import ProductCard from './components/ProductCard';
+
 import PageHeader from './components/PageHeader';
 import ProductHeader from './components/ProductHeader';
+import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
+import Features from './components/Features';
+
 import isArrayEmpty from './helpers/Utils';
 
 const productDataArray = productData.colorOptions;
@@ -29,8 +32,14 @@ class App extends Component {
     this.setState({ productDataArray: updatedProductArray });
   };
 
+  selectedProductId = () => {
+    const products = this.state.productDataArray;
+    const product = products.filter(row => row.isCurrentlySelected === true);
+    const response = product.length === 0 ? 1 : product[0].id;
+    return response;
+  };
+
   render() {
-    // eslint-disable-next-line max-len
     const ProductCards = isArrayEmpty(this.state.productDataArray) ? [] : this.state.productDataArray.map((item, pos) => (
     <ProductCard
       key={item.id}
@@ -43,12 +52,26 @@ class App extends Component {
     ));
 
     return (
-    <div className='App'>
-      <div> { PageHeader } </div>
-      <div> { ProductHeader } </div>
-      <div> { SelectedProduct } { ProductCards } </div>
-      <br></br>
-    </div>
+      <div className='App'>
+        <div> { PageHeader } </div>
+        <table>
+          <tbody>
+            <tr>
+              <th>{ SelectedProduct(this.selectedProductId()) }</th>
+              <th style={{ textAlign: 'left' }}>
+                <div>{ ProductHeader }</div>
+                <div>
+                  Select colour
+                  <br></br>
+                  { ProductCards }
+                </div>
+                  { Features() }
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     );
   }
 }
