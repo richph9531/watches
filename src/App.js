@@ -41,7 +41,6 @@ class App extends Component {
     const ProductCards = this.state.productDataArray.map((item, pos) => (
     <ProductCard
       key={item.id}
-      title={item.title}
       styleName={item.styleName}
       imageUrl={item.imageUrl}
       onProductSelection={() => this.onProductSelection(pos)}

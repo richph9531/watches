@@ -1,14 +1,23 @@
 .SelectedProduct {
-  margin: 16px;
-  padding: 16px;
-  border-radius: 30px;
-  background: #ececec;
-  box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  text-align: right;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  height: 450px;
+  width: 350px;
+
 }
 .WatchImage {
-  height: 500px;
-  width: 500px;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 400px;
+}
+.HeartRate {
+  position: absolute;
+  top: 170px;
+  left: 170px;
+  height: 50px;
+  width: 50px;
 }
