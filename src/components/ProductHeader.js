@@ -7,10 +7,8 @@ const pageDescription = productData.description;
 
 const ProductHeader = (
     <div>
-    <div className={classes.PageTitle}>{ pageTitle }</div>
-    <br></br>
-    <div className={classes.PageDescription}>{ pageDescription }</div>
-    <br></br>
+    <h1 className={classes.PageTitle}>{ pageTitle }</h1>
+    <p className={classes.PageDescription}>{ pageDescription }</p>
     </div>
 );
 

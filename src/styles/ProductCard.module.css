@@ -1,39 +1,25 @@
 .ProductCard {
-  margin: 16px;
-  padding: 16px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 80px;
+  border-radius: 8px;
   background: #ececec;
-  box-sizing: border-box;
-  height: 140px;
-  width: 140px;
-  display: inline-block;
+  margin-right: 12px;
+  border:3px;
+  border-style:solid;
+  border-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .ProductCardSelected {
-  margin: 16px;
-  padding: 16px;
+  width: 100%;
+  max-width: 80px;
+  border-radius: 8px;
   background: #ececec;
-  box-sizing: border-box;
-  height: 140px;
-  width: 140px;
-  display: inline-block;
+  margin-right: 12px;
   border:3px;
   border-style:solid;
-  border-color: #af3f3f;
-  border-radius: 20px;
-}
-
-.WatchImage {
-  height: 100px;
-  width: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-@media (min-width: 992px) {
-  .ProductCard {
-    display: inline-block;
-  }
+  border-color: #5549c0;
+  border-radius: 8px;
+  cursor: pointer;
 }

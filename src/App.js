@@ -7,8 +7,9 @@ import PageHeader from './components/PageHeader';
 import ProductHeader from './components/ProductHeader';
 import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
-import TimeOnWatch from './components/TimeOnWatch';
 import Features from './components/Features';
+
+import classes from './styles/App.module.css';
 
 const productDataArray = productData.colorOptions;
 // const featuresArray = productData.featureList;
@@ -52,23 +53,20 @@ class App extends Component {
     return (
       <div className='App'>
         <div> { PageHeader } </div>
-        <table>
-          <tbody>
-            <tr>
-              <th>{ SelectedProduct(this.selectedProductId()) }</th>
-              <th style={{ textAlign: 'left' }}>
-                <div>{ ProductHeader }</div>
-                <div>
-                  Select colour
-                  <br></br>
-                  { ProductCards }
-                </div>
-                  { Features() }
-              </th>
-            </tr>
-          </tbody>
-        </table>
-        {TimeOnWatch()}
+        <div className={classes.MainContainer}>
+          <div>
+            { SelectedProduct(this.selectedProductId()) }
+          </div>
+          <div className={classes.ProductData}>
+            <div>{ ProductHeader }</div>
+            <div>
+              <h3 className={classes.SelectColourHeading}>Select Colour</h3>
+              <br></br>
+              { ProductCards }
+            </div>
+            { Features() }
+          </div>
+        </div>
       </div>
 
     );

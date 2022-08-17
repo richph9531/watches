@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import classes from '../styles/ProductCard.module.css';
 
 const ProductCard = props => (
-  <div
-    onClick={props.onProductSelection}
-    className={props.isCurrentlySelected ? classes.ProductCardSelected : classes.ProductCard }>
-    <img className={classes.WatchImage} src={props.imageUrl} alt={props.styleName}/>
-  </div>
+    <img
+      onClick={props.onProductSelection}
+      src={props.imageUrl} alt={props.styleName}
+      className={props.isCurrentlySelected ? classes.ProductCardSelected : classes.ProductCard }
+    />
 );
+
 ProductCard.propTypes = {
   imageUrl: PropTypes.string,
   styleName: PropTypes.string,

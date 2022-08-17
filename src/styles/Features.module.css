@@ -1,0 +1,45 @@
+.FeaturesHeading {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.FeatureItem {
+  background-color: #dad9d9;
+  min-width:80px;
+  border-radius: 8px;
+  border: 0;
+  padding: 12px;
+  margin-right: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  box-sizing: content-box;
+}
+
+.SelectedFeatureItem {
+  background-color: #828282;
+  color: white;
+  min-width:80px;
+  border-radius: 8px;
+  border: 0;
+  padding: 12px;
+  margin-right: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  box-sizing: content-box;
+}
+
+.BuyNow {
+  background-color: #8083d2;
+  color: white;
+  min-width:80px;
+  border-radius: 8px;
+  border: 0;
+  padding: 12px;
+  margin-top: 36px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  box-sizing: content-box;
+}

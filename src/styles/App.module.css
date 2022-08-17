@@ -1,0 +1,18 @@
+.MainContainer {
+  padding: 4% 12%;
+  margin-top: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.ProductData {
+  width: 50%;
+}
+
+.SelectColourHeading {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
