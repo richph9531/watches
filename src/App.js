@@ -7,6 +7,7 @@ import PageHeader from './components/PageHeader';
 import ProductHeader from './components/ProductHeader';
 import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
+import TimeOnWatch from './components/TimeOnWatch';
 import Features from './components/Features';
 
 const productDataArray = productData.colorOptions;
@@ -67,6 +68,7 @@ class App extends Component {
             </tr>
           </tbody>
         </table>
+        {TimeOnWatch()}
       </div>
 
     );

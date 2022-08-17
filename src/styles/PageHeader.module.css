@@ -1,12 +1,13 @@
 .PageHeader {
-  margin: 0 !important;
-  /* padding: 0 !important; */
-  padding: 16px;
+  padding: 24px 48px 12px;
   background: #3C6478;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.AmazonImage {
-  height: 50px;
-  width: 110px;
+.PageHeader > img {
+  width: 100px;
 }
