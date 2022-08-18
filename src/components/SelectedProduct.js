@@ -1,12 +1,13 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from '../styles/SelectedProduct.module.css';
-import productData from '../data/productData.json';
 
-const productDataArray = productData.colorOptions;
-
-const SelectedProduct = productId => {
-  const filtered = productDataArray.filter(row => row.id === productId);
+const SelectedProduct = props => {
+  const products = props.data.colorOptions;
+  const product = products.filter(row => row.isCurrentlySelected === true);
+  const response = product.length === 0 ? 1 : product[0].id;
+  const filtered = products.filter(row => row.id === response);
 
   const TimeInHoursAndMinutes = () => {
     const hours = new Date().getHours() > 9 ? new Date().getHours() : `0${new Date().getHours()}`;
@@ -27,9 +28,12 @@ const SelectedProduct = productId => {
       <img className={classes.HeartRateImage} src="https://media.giphy.com/media/Vzf35rsf0Sv28Qkghf/giphy.gif"/>
       <p className={classes.HeartRateText}>78</p>
     </div>
-
   </div>
   );
+};
+
+SelectedProduct.propTypes = {
+  data: PropTypes.object,
 };
 
 export default SelectedProduct;

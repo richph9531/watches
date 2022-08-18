@@ -1,26 +1,30 @@
 import React from 'react';
-
-import productData from '../data/productData.json';
+import PropTypes from 'prop-types';
 
 import classes from '../styles/Features.module.css';
 
-const featureListArray = productData.featureList;
+const Features = props => {
+  const featuresArray = props.data.featureList;
 
-const Features = () => {
-  const featuresArray = JSON.stringify(featureListArray);
+  const featureList = featuresArray.map((item, pos) => (
+    <button key={pos} className= {pos === 0 ? classes.SelectedFeatureItem : classes.FeatureItem }>
+      {item}
+    </button>
+  ));
+
   return (
     <div>
       <h3 className={classes.FeaturesHeading}>Features</h3>
-      <div>
-        <button className={classes.SelectedFeatureItem}>Time</button>
-        <button className={classes.FeatureItem}>Heart Rate</button>
-      </div>
+      <div>{ featureList }</div>
       <div>
         <button className={classes.BuyNow}>Buy Now</button>
       </div>
-       { featuresArray }
-    </div>
+     </div>
   );
+};
+
+Features.propTypes = {
+  data: PropTypes.object,
 };
 
 export default Features;

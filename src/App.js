@@ -1,9 +1,11 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 
 import productData from './data/productData.json';
 
 import PageHeader from './components/PageHeader';
 import ProductHeader from './components/ProductHeader';
+// import ProductCards from './components/ProductCards';
 import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
 import Features from './components/Features';
@@ -12,52 +14,47 @@ import classes from './styles/App.module.css';
 
 class App extends Component {
   state = {
+    productData,
     productDataArray: productData.colorOptions,
   };
 
-  onProductSelection = pos => {
-    this.state.productDataArray.map(productObject => {
+  onProductSelection = (pos, dataArray) => {
+    dataArray.map(productObject => {
       const a = productObject;
       a.isCurrentlySelected = false;
       return a;
     });
-    const updatedProductArray = this.state.productDataArray;
+    const updatedProductArray = dataArray;
     const updatedProductObject = updatedProductArray[pos];
     updatedProductObject.isCurrentlySelected = true;
     updatedProductArray[pos] = updatedProductObject;
     this.setState({ productDataArray: updatedProductArray });
   };
 
-  selectedProductId = () => {
-    const products = this.state.productDataArray;
-    const product = products.filter(row => row.isCurrentlySelected === true);
-    const response = product.length === 0 ? 1 : product[0].id;
-    return response;
-  };
-
   render() {
-    const ProductCards = this.state.productDataArray.map((item, pos) => (
+    const dataArray = this.state.productDataArray;
+    const ProductCards = dataArray.map((item, pos) => (
     <ProductCard
-      key={item.id}
+      key={pos}
       styleName={item.styleName}
       imageUrl={item.imageUrl}
-      onProductSelection={() => this.onProductSelection(pos)}
-      isCurrentlySelected={this.state.productDataArray[pos].isCurrentlySelected}
+      onProductSelection={() => this.onProductSelection(pos, dataArray)}
+      isCurrentlySelected={dataArray[pos].isCurrentlySelected}
     />
     ));
 
     return (
       <div className='App'>
-        <div>< PageHeader/> </div>
+        <div><PageHeader/></div>
         <div className={classes.MainContainer}>
-          <div>{ SelectedProduct(this.selectedProductId()) }</div>
+          <div><SelectedProduct data={productData}/></div>
           <div className={classes.ProductData}>
-            <div><ProductHeader/></div>
+            <div><ProductHeader data={productData}/></div>
             <div>
-              <h3 className={classes.SelectColourHeading}>Select Colour</h3>
+            <h3 className={classes.SelectColourHeading}>Select Colour</h3>
               <div>{ ProductCards }</div>
             </div>
-          < Features />
+          < Features data={productData} />
           </div>
         </div>
       </div>

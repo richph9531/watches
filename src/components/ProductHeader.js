@@ -1,15 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from '../styles/ProductHeader.module.css';
-import productData from '../data/productData.json';
 
-const pageTitle = productData.title;
-const pageDescription = productData.description;
-
-const ProductHeader = () => (
+const ProductHeader = props => (
     <div>
-      <h1 className={classes.PageTitle}>{ pageTitle }</h1>
-      <p className={classes.PageDescription}>{ pageDescription }</p>
+      <h1 className={classes.PageTitle}>{ props.data.title }</h1>
+      <p className={classes.PageDescription}>{ props.data.description }</p>
     </div>
 );
+
+ProductHeader.propTypes = {
+  data: PropTypes.object,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
 
 export default ProductHeader;
