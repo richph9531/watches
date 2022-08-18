@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Component } from 'react';
 
 import productData from './data/productData.json';
@@ -11,12 +10,9 @@ import Features from './components/Features';
 
 import classes from './styles/App.module.css';
 
-const productDataArray = productData.colorOptions;
-// const featuresArray = productData.featureList;
-
 class App extends Component {
   state = {
-    productDataArray,
+    productDataArray: productData.colorOptions,
   };
 
   onProductSelection = pos => {
@@ -52,23 +48,19 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <div> { PageHeader } </div>
+        <div>< PageHeader/> </div>
         <div className={classes.MainContainer}>
-          <div>
-            { SelectedProduct(this.selectedProductId()) }
-          </div>
+          <div>{ SelectedProduct(this.selectedProductId()) }</div>
           <div className={classes.ProductData}>
-            <div>{ ProductHeader }</div>
+            <div><ProductHeader/></div>
             <div>
               <h3 className={classes.SelectColourHeading}>Select Colour</h3>
-              <br></br>
-              { ProductCards }
+              <div>{ ProductCards }</div>
             </div>
-            { Features() }
+          < Features />
           </div>
         </div>
       </div>
-
     );
   }
 }
