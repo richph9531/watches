@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import classes from '../styles/Features.module.css';
 
 const Features = props => {
-  const featuresArray = props.data.featureList;
-
+  const featuresArray = props.data.data.featureList;
   const featureList = featuresArray.map((item, pos) => (
-    <button key={pos} className= {pos === 0 ? classes.SelectedFeatureItem : classes.FeatureItem }>
-      {item}
+    <button
+      key={pos}
+      className={pos === 0 ? classes.SelectedFeatureItem : classes.FeatureItem }
+      onClick={() => props.data.onFeatureSelection(pos)}
+    >
+    {item}
     </button>
   ));
 
@@ -25,6 +28,7 @@ const Features = props => {
 
 Features.propTypes = {
   data: PropTypes.object,
+  onFeatureSelection: PropTypes.object,
 };
 
 export default Features;

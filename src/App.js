@@ -1,60 +1,49 @@
-/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 
 import productData from './data/productData.json';
 
 import PageHeader from './components/PageHeader';
-import ProductHeader from './components/ProductHeader';
-// import ProductCards from './components/ProductCards';
-import ProductCard from './components/ProductCard';
 import SelectedProduct from './components/SelectedProduct';
-import Features from './components/Features';
+import ProductDetails from './components/ProductDetails';
 
 import classes from './styles/App.module.css';
 
 class App extends Component {
   state = {
     productData,
-    productDataArray: productData.colorOptions,
+    currentlySelectedFeature: 'Time',
+    currentlySelectedStrapId: 1,
   };
 
-  onProductSelection = (pos, dataArray) => {
-    dataArray.map(productObject => {
-      const a = productObject;
-      a.isCurrentlySelected = false;
-      return a;
-    });
-    const updatedProductArray = dataArray;
-    const updatedProductObject = updatedProductArray[pos];
-    updatedProductObject.isCurrentlySelected = true;
-    updatedProductArray[pos] = updatedProductObject;
-    this.setState({ productDataArray: updatedProductArray });
+  onProductSelection = pos => {
+    const updatedCurrentlySelectedStrapId = this.state.productData.colorOptions[pos].id;
+    this.setState({ currentlySelectedStrapId: updatedCurrentlySelectedStrapId });
+  };
+
+  onFeatureSelection = pos => {
+    const updatedCurrentlySelectedFeature = this.state.productData.featureList[pos];
+    this.setState({ currentlySelectedFeature: updatedCurrentlySelectedFeature });
   };
 
   render() {
-    const dataArray = this.state.productDataArray;
-    const ProductCards = dataArray.map((item, pos) => (
-    <ProductCard
-      key={pos}
-      styleName={item.styleName}
-      imageUrl={item.imageUrl}
-      onProductSelection={() => this.onProductSelection(pos, dataArray)}
-      isCurrentlySelected={dataArray[pos].isCurrentlySelected}
-    />
-    ));
-
     return (
       <div className='App'>
-        <div><PageHeader/></div>
+        <PageHeader/>
         <div className={classes.MainContainer}>
-          <div><SelectedProduct data={productData}/></div>
+          <div>
+            <SelectedProduct
+              data={this.state.productData}
+              showTimeOnWatch={this.state.showTimeOnWatch}
+              currentlySelectedStrapId={this.state.currentlySelectedStrapId}
+              currentlySelectedFeature={this.state.currentlySelectedFeature}
+            />
+          </div>
           <div className={classes.ProductData}>
-            <div><ProductHeader data={productData}/></div>
-            <div>
-            <h3 className={classes.SelectColourHeading}>Select Colour</h3>
-              <div>{ ProductCards }</div>
-            </div>
-          < Features data={productData} />
+            <ProductDetails
+              data={this.state.productData}
+              onProductSelection={this.onProductSelection}
+              onFeatureSelection={this.onFeatureSelection}
+            />
           </div>
         </div>
       </div>

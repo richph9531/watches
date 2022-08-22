@@ -2,10 +2,12 @@
   "name": "react-practice",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://richph9531.github.io/watches",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.1",
+    "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,6 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint . --ext .jsx,.js --fix && eslint . -f checkstyle -o eslint.xml",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"

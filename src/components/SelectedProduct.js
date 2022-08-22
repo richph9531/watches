@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 import classes from '../styles/SelectedProduct.module.css';
 
 const SelectedProduct = props => {
-  const products = props.data.colorOptions;
-  const product = products.filter(row => row.isCurrentlySelected === true);
-  const response = product.length === 0 ? 1 : product[0].id;
-  const filtered = products.filter(row => row.id === response);
+  const selectedWatchStrap = () => {
+    const products = props.data.colorOptions;
+    const product = products.filter(row => row.id === props.currentlySelectedStrapId);
+    const response = product.length === 0 ? 1 : product[0].id;
+    const filteredArray = products.filter(row => row.id === response);
+    return filteredArray[0];
+  };
 
   const TimeInHoursAndMinutes = () => {
     const hours = new Date().getHours() > 9 ? new Date().getHours() : `0${new Date().getHours()}`;
@@ -18,22 +21,27 @@ const SelectedProduct = props => {
   return (
   <div className={classes.SelectedProduct}>
     <img className={classes.WatchImage}
-      src={filtered[0].imageUrl}
-      alt={filtered[0].styleName}
+      src={selectedWatchStrap().imageUrl}
+      alt={selectedWatchStrap().styleName}
     />
-    <div>
+    { props.currentlySelectedFeature === 'Time'
+      ? <div>
       <p className={classes.Time}>{TimeInHoursAndMinutes()}</p>
     </div>
-    <div>
+      : <div>
       <img className={classes.HeartRateImage} src="https://media.giphy.com/media/Vzf35rsf0Sv28Qkghf/giphy.gif"/>
       <p className={classes.HeartRateText}>78</p>
     </div>
+    }
   </div>
   );
 };
 
 SelectedProduct.propTypes = {
   data: PropTypes.object,
+  showTimeOnWatch: PropTypes.bool,
+  currentlySelectedStrapId: PropTypes.number,
+  currentlySelectedFeature: PropTypes.string,
 };
 
 export default SelectedProduct;
