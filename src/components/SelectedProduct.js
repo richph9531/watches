@@ -1,6 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import classes from '../styles/SelectedProduct.module.css';
 
 const SelectedProduct = props => {
@@ -20,8 +20,9 @@ const SelectedProduct = props => {
 
   return (
   <div className={classes.SelectedProduct}>
-    <img className={classes.WatchImage}
-      src={selectedWatchStrap().imageUrl}
+    <img
+      className={classes.WatchImage}
+      src={`${process.env.PUBLIC_URL}/media/${selectedWatchStrap().imageUrl}`}
       alt={selectedWatchStrap().styleName}
     />
     { props.currentlySelectedFeature === 'Time'
@@ -29,7 +30,10 @@ const SelectedProduct = props => {
       <p className={classes.Time}>{TimeInHoursAndMinutes()}</p>
     </div>
       : <div>
-      <img className={classes.HeartRateImage} src="https://media.giphy.com/media/Vzf35rsf0Sv28Qkghf/giphy.gif"/>
+      <img
+        className={classes.HeartRateImage}
+        src={`${process.env.PUBLIC_URL}/media/HeartRate.gif`}
+      />
       <p className={classes.HeartRateText}>78</p>
     </div>
     }

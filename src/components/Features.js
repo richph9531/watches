@@ -8,7 +8,7 @@ const Features = props => {
   const featureList = featuresArray.map((item, pos) => (
     <button
       key={pos}
-      className={pos === 0 ? classes.SelectedFeatureItem : classes.FeatureItem }
+      className={props.data.currentlySelectedFeature === item ? classes.SelectedFeatureItem : classes.FeatureItem }
       onClick={() => props.data.onFeatureSelection(pos)}
     >
     {item}

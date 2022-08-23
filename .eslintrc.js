@@ -25,5 +25,6 @@ module.exports = {
     'no-useless-escape': [1],
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
+    'max-len': [0],
   },
 };

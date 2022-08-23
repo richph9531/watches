@@ -1,26 +1,26 @@
 {
-  "title": "Watches shopping page practice",
+  "title": "Watch shopping",
   "description": "This is a practice page created to be able to choose a strap colour and display the time or heart rate on the selected product.",
   "colorOptions": [
     {
       "id": 1,
       "styleName": "Black Strap",
-      "imageUrl": "https://imgur.com/iOeUBV7.png"
+      "imageUrl": "BlackStrap.png"
     },
     {
       "id": 2,
       "styleName": "Red Strap",
-      "imageUrl": "https://imgur.com/PTgQlim.png"
+      "imageUrl": "RedStrap.png"
     },
     {
       "id": 3,
       "styleName": "Blue Strap",
-      "imageUrl": "https://imgur.com/Mplj1YR.png"
+      "imageUrl": "BlueStrap.png"
     },
     {
       "id": 4,
       "styleName": "Purple Strap",
-      "imageUrl": "https://imgur.com/xSIK4M8.png"
+      "imageUrl": "PurpleStrap.png"
     }
   ],
   "featureList": [

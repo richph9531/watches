@@ -43,6 +43,8 @@ class App extends Component {
               data={this.state.productData}
               onProductSelection={this.onProductSelection}
               onFeatureSelection={this.onFeatureSelection}
+              currentlySelectedStrapId={this.state.currentlySelectedStrapId}
+              currentlySelectedFeature={this.state.currentlySelectedFeature}
             />
           </div>
         </div>

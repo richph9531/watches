@@ -1,9 +1,12 @@
 import React from 'react';
+
 import classes from '../styles/PageHeader.module.css';
 
 const PageHeader = () => (
     <div className={classes.PageHeader}>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' alt='Amazon Image'/>
+      <img
+        src={`${process.env.PUBLIC_URL}/media/AmazonLogo.svg`}
+        alt='Amazon Logo'/>
     </div>
 );
 

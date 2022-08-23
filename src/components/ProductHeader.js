@@ -4,8 +4,8 @@ import classes from '../styles/ProductHeader.module.css';
 
 const ProductHeader = props => (
     <div>
-      <h1 className={classes.PageTitle}>{ props.data.title }</h1>
-      <p className={classes.PageDescription}>{ props.data.description }</p>
+      <h1 className={classes.PageTitle}>{props.data.title}</h1>
+      <p className={classes.PageDescription}>{props.data.description}</p>
     </div>
 );
 

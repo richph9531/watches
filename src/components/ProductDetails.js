@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProductHeader from './ProductHeader';
-
 import Features from './Features';
 
 import classes from '../styles/ProductCard.module.css';
@@ -11,9 +10,9 @@ const ProductDetails = props => {
   const ProductCards = props.data.colorOptions.map((item, pos) => (
     <img
       key={pos}
-      src={item.imageUrl}
+      src={`${process.env.PUBLIC_URL}/media/${item.imageUrl}`}
       alt={item.styleName}
-      className={props.isCurrentlySelected ? classes.ProductCardSelected : classes.ProductCard }
+      className={props.currentlySelectedStrapId === item.id ? classes.ProductCardSelected : classes.ProductCard}
       onClick={() => props.onProductSelection(pos)}
     />
   ));
@@ -36,6 +35,7 @@ ProductDetails.propTypes = {
   styleName: PropTypes.string,
   onProductSelection: PropTypes.func,
   isCurrentlySelected: PropTypes.bool,
+  currentlySelectedStrapId: PropTypes.number,
 };
 
 export default ProductDetails;
