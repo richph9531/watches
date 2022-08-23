@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders correctly with Heart Rate selected 1`] = `
+<body>
+  <div>
+    <div>
+      <h3
+        class="FeaturesHeading"
+      >
+        Features
+      </h3>
+      <div>
+        <button
+          class="FeatureItem"
+        >
+          Time
+        </button>
+        <button
+          class="SelectedFeatureItem"
+        >
+          Heart Rate
+        </button>
+      </div>
+      <div>
+        <button
+          class="BuyNow"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Component renders correctly with Time selected 1`] = `
+<body>
+  <div>
+    <div>
+      <h3
+        class="FeaturesHeading"
+      >
+        Features
+      </h3>
+      <div>
+        <button
+          class="SelectedFeatureItem"
+        >
+          Time
+        </button>
+        <button
+          class="FeatureItem"
+        >
+          Heart Rate
+        </button>
+      </div>
+      <div>
+        <button
+          class="BuyNow"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Component renders correctly with an invalid value selected 1`] = `
+<body>
+  <div>
+    <div>
+      <h3
+        class="FeaturesHeading"
+      >
+        Features
+      </h3>
+      <div>
+        <button
+          class="FeatureItem"
+        >
+          Time
+        </button>
+        <button
+          class="FeatureItem"
+        >
+          Heart Rate
+        </button>
+      </div>
+      <div>
+        <button
+          class="BuyNow"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Component renders correctly with more values in the array 1`] = `
+<body>
+  <div>
+    <div>
+      <h3
+        class="FeaturesHeading"
+      >
+        Features
+      </h3>
+      <div>
+        <button
+          class="FeatureItem"
+        >
+          Time
+        </button>
+        <button
+          class="FeatureItem"
+        >
+          Heart Rate
+        </button>
+        <button
+          class="SelectedFeatureItem"
+        >
+          GPS
+        </button>
+      </div>
+      <div>
+        <button
+          class="BuyNow"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

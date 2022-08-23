@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Can render without data 1`] = `
+<body>
+  <div>
+    <div>
+      <h1
+        class="PageTitle"
+      />
+      <p
+        class="PageDescription"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Can render without description data 1`] = `
+<body>
+  <div>
+    <div>
+      <h1
+        class="PageTitle"
+      >
+        Page header Title
+      </h1>
+      <p
+        class="PageDescription"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Can render without title data 1`] = `
+<body>
+  <div>
+    <div>
+      <h1
+        class="PageTitle"
+      />
+      <p
+        class="PageDescription"
+      >
+        Page header description
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Page header renders correctly 1`] = `
+<body>
+  <div>
+    <div>
+      <h1
+        class="PageTitle"
+      >
+        Page header Title
+      </h1>
+      <p
+        class="PageDescription"
+      >
+        Page header description
+      </p>
+    </div>
+  </div>
+</body>
+`;

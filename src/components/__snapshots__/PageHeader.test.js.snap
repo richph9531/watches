@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page header renders correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="PageHeader"
+    >
+      <img
+        alt="Amazon Logo"
+        src="/media/AmazonLogo.svg"
+      />
+    </div>
+  </div>
+</body>
+`;
