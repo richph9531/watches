@@ -25,6 +25,12 @@ class App extends Component {
     this.setState({ currentlySelectedFeature: updatedCurrentlySelectedFeature });
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    const currentState = JSON.stringify(this.state);
+    const otherState = JSON.stringify(nextState);
+    return currentState !== otherState;
+  }
+
   render() {
     return (
       <div className='App'>
