@@ -3,31 +3,15 @@ import PropTypes from 'prop-types';
 
 import ProductHeader from './ProductHeader';
 import Features from './Features';
+import ProductCards from './ProductCards';
 
-import classes from '../styles/ProductCard.module.css';
-
-const ProductDetails = props => {
-  const ProductCards = props.data.colorOptions.map((item, pos) => (
-    <img
-      key={pos}
-      src={`${process.env.PUBLIC_URL}/media/${item.imageUrl}`}
-      alt={item.styleName}
-      className={props.currentlySelectedStrapId === item.id ? classes.ProductCardSelected : classes.ProductCard}
-      onClick={() => props.onProductSelection(pos)}
-    />
-  ));
-
-  return (
+const ProductDetails = props => (
     <div>
-      <div><ProductHeader data={props.data}/></div>
-      <div>
-        <h3>Select Colour</h3>
-        <div>{ ProductCards }</div>
-      </div>
-      < Features data={props}/>
+      <div><ProductHeader data={props}/></div>
+      <div><ProductCards data={props}/></div>
+      <div><Features data={props}/></div>
     </div>
-  );
-};
+);
 
 ProductDetails.propTypes = {
   data: PropTypes.object,

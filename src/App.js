@@ -39,7 +39,6 @@ class App extends Component {
           <div>
             <SelectedProduct
               data={this.state.productData}
-              showTimeOnWatch={this.state.showTimeOnWatch}
               currentlySelectedStrapId={this.state.currentlySelectedStrapId}
               currentlySelectedFeature={this.state.currentlySelectedFeature}
             />

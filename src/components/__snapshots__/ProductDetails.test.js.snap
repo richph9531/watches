@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders correctly with Time selected 1`] = `
+<body>
+  <div>
+    <div>
+      <h3
+        class="FeaturesHeading"
+      >
+        Features
+      </h3>
+      <div>
+        <button
+          class="SelectedFeatureItem"
+        >
+          Time
+        </button>
+        <button
+          class="FeatureItem"
+        >
+          Heart Rate
+        </button>
+      </div>
+      <div>
+        <button
+          class="BuyNow"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

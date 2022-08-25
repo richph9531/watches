@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders correctly with Heart Rate selected and a valid strap colour 1`] = `
+<body>
+  <div>
+    <div
+      class="SelectedProduct"
+    >
+      <img
+        alt="Black Strap"
+        class="WatchImage"
+        src="/media/BlackStrap.png"
+      />
+      <div>
+        <img
+          class="HeartRateImage"
+          src="/media/HeartRate.gif"
+        />
+        <p
+          class="HeartRateText"
+        >
+          78
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Component renders correctly with Heart Rate selected and an invalid strap colour 1`] = `
+<body>
+  <div>
+    <div
+      class="SelectedProduct"
+    >
+      <img
+        alt="Black Strap"
+        class="WatchImage"
+        src="/media/BlackStrap.png"
+      />
+      <div>
+        <img
+          class="HeartRateImage"
+          src="/media/HeartRate.gif"
+        />
+        <p
+          class="HeartRateText"
+        >
+          78
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Component renders correctly with Time selected and a valid strap colour 1`] = `
+<body>
+  <div>
+    <div
+      class="SelectedProduct"
+    >
+      <img
+        alt="Black Strap"
+        class="WatchImage"
+        src="/media/BlackStrap.png"
+      />
+      <div>
+        <img
+          class="HeartRateImage"
+          src="/media/HeartRate.gif"
+        />
+        <p
+          class="HeartRateText"
+        >
+          78
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

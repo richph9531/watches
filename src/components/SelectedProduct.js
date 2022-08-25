@@ -43,7 +43,7 @@ const SelectedProduct = props => {
 
 SelectedProduct.propTypes = {
   data: PropTypes.object,
-  showTimeOnWatch: PropTypes.bool,
+
   currentlySelectedStrapId: PropTypes.number,
   currentlySelectedFeature: PropTypes.string,
 };
