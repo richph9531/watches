@@ -13,16 +13,26 @@ class App extends Component {
     productData,
     currentlySelectedFeature: 'Time',
     currentlySelectedStrapId: 1,
+    buyButtonJustClicked: false,
   };
 
   onProductSelection = pos => {
     const updatedCurrentlySelectedStrapId = this.state.productData.colorOptions[pos].id;
+    const updatedBuyButtonClicked = false;
     this.setState({ currentlySelectedStrapId: updatedCurrentlySelectedStrapId });
+    this.setState({ buyButtonJustClicked: updatedBuyButtonClicked });
   };
 
   onFeatureSelection = pos => {
     const updatedCurrentlySelectedFeature = this.state.productData.featureList[pos];
+    const updatedBuyButtonClicked = false;
     this.setState({ currentlySelectedFeature: updatedCurrentlySelectedFeature });
+    this.setState({ buyButtonJustClicked: updatedBuyButtonClicked });
+  };
+
+  onBuyButtonClick = () => {
+    const updatedBuyButtonClicked = true;
+    this.setState({ buyButtonJustClicked: updatedBuyButtonClicked });
   };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -48,8 +58,10 @@ class App extends Component {
               data={this.state.productData}
               onProductSelection={this.onProductSelection}
               onFeatureSelection={this.onFeatureSelection}
+              onBuyButtonClick={this.onBuyButtonClick}
               currentlySelectedStrapId={this.state.currentlySelectedStrapId}
               currentlySelectedFeature={this.state.currentlySelectedFeature}
+              buyButtonJustClicked={this.state.buyButtonJustClicked}
             />
           </div>
         </div>

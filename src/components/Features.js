@@ -1,7 +1,5 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
-import BuyButton from './BuyButton';
 
 import classes from '../styles/Features.module.css';
 
@@ -21,7 +19,6 @@ const Features = props => {
     <div>
       <h3 className={classes.FeaturesHeading}>Features</h3>
       <div>{ featureList }</div>
-      <div><BuyButton/></div>
      </div>
   );
 };
